@@ -1,0 +1,58 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(180deg, #f4e1ff, #e0c4ff);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .login-container {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .login-box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  h2 .highlight {
+    color: #b085f5; 
+  }
+  
+  mat-form-field {
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  button {
+    background-color: #b085f5;
+    color: white;
+  }
+  
+  button:hover {
+    background-color: #9b72d8;
+  }
+  
+  .create-account {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .create-account a {
+    color: #b085f5;
+    text-decoration: none;
+  }
+  
