@@ -1,9 +1,8 @@
-const { User } = require('../models/user'); // Ensure correct import
+const { User } = require('../models'); 
 const bcrypt = require('bcryptjs');
 
 exports.signup = async (req, res) => {
     const { name, email, password } = req.body;
-
     try {
         // Check if user already exists
         const existingUser = await User.findOne({ where: { email } });
