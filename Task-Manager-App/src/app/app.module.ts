@@ -17,6 +17,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { RouterModule } from '@angular/router';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { RestService } from './services/rest.service';
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth.guard.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,7 @@ import { RestService } from './services/rest.service';
 
   providers: [
     RestService,
-
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
