@@ -3,6 +3,7 @@ import { RestService } from '../services/rest.service';
 import { NotificationService } from '../services/notification.service';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -32,6 +33,8 @@ export class LoginComponent {
 
         if (response.status === 200) {
           this.notificationService.showSuccess('Login successful!');
+          const token = responseBody.token;
+          AuthService.setToken(token);
           this.router.navigate(['/tasks']);
         } else if (responseBody && responseBody.message) {
           if (responseBody.message == "Invalid email or password") {
