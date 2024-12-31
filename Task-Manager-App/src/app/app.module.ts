@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { SignupComponent } from './signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
+// import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ToastrModule } from 'ngx-toastr';
+import { RouterModule } from '@angular/router';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { RestService } from './services/rest.service';
 
 @NgModule({
   declarations: [
@@ -20,17 +26,29 @@ import { HttpClientModule } from '@angular/common/http';
     SignupComponent
   ],
   imports: [
+    RouterModule,
+    HttpClientModule,
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     FormsModule,
+    DashboardModule,
     ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    HttpClientModule
-    ],
-  providers: [],
+    MatSnackBarModule,
+    ToastrModule.forRoot({
+      positionClass: "toast-top-right",
+      preventDuplicates: true,
+    }),
+      ],
+    schemas: [NO_ERRORS_SCHEMA],
+
+  providers: [
+    RestService,
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
